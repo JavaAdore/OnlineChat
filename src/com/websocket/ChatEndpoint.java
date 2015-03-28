@@ -13,7 +13,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.logging.Logger;
 
-import javax.inject.Singleton;
 import javax.websocket.EncodeException;
 import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
@@ -22,7 +21,7 @@ import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 
 @ServerEndpoint(value = "/chat/{memberID}/{groupID}", encoders = ChatMessageEncoder.class, decoders = ChatMessageDecoder.class)
-@Singleton
+
 public class ChatEndpoint extends Thread {
 	private final Logger log = Logger.getLogger(getClass().getName());
 
@@ -357,7 +356,7 @@ public class ChatEndpoint extends Thread {
 		for (Member curMember : group.getMembers()) {
 			if (curMember.equals(member) == false) {
 
-				for (Session session : sessionsMap.get(curMember)) {
+				for (Session session : sessionsMap.get(curMember)) { 
 
 					sendMessage(session, chatMessage);
 				}
