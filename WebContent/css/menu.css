@@ -1,0 +1,82 @@
+/* CSS Document */
+
+ 
+
+ul#toplinks, ul#toplinks ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	
+	
+}
+ul#toplinks li { 
+	line-height : 1.35em;
+	position: relative;	
+	float: left;
+}
+ul#toplinks li li { /* Needed for Opera 9, maybe because it's decent CSS. Hide from IE6 */
+	float: none;
+	
+	
+	
+}
+
+#toplinks a {
+	display: block;
+	 /*            ****CHANGE MENU WIDTH**** */	
+		
+	padding: 0px 0.5em;
+}	
+	
+	
+#ult
+  { background-color: #696969;		
+	border-bottom:1px solid #fff;
+	border-left:1px solid #fff;
+	border-right:1px solid #fff;	
+  }
+	
+#ult a
+{ border-top:1px solid #fff; padding: 4px 0.5em 0px 8px; }
+
+
+ul#toplinks a:hover {
+	color: #fff;
+	text-decoration:none;
+		
+}
+
+ul#toplinks li li a {
+	width: 13em;
+	height:1.8em; /*           ****CHANGE SUBMENU WIDTH**** */
+	
+}
+ul#toplinks li li li a {
+	width: 13em; /*           ****CHANGE SUBMENU WIDTH**** */
+	
+}
+
+ul#toplinks li ul {
+	position : absolute;
+	left: -800em;
+	margin-top:0px;
+	
+	
+	
+}
+
+#toplinks li:hover ul, #toplinks li li:hover ul, #toplinks li.sfhover ul, #toplinks li li.sfhover ul {
+	top:5px;
+	left: -10px;
+	margin-left: 100%;
+	
+}
+
+
+/*                       ****DISPLAYS HORIZONTAL MENU**** */
+#toplinks li:active ul, #toplinks li:hover ul, #toplinks li.sfhover ul {
+	top: 100%;
+	margin-left: 0;
+	
+}
+

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" id="WebApp_ID" version="2.4">
+  <display-name>Restful Web Application</display-name>
+  <context-param>
+    <param-name>resteasy.resources</param-name>
+    <param-value>com.websocket.webservice.WebServices</param-value>
+  </context-param>
+  <context-param>
+    <param-name>resteasy.servlet.mapping.prefix</param-name>
+    <param-value>/ws</param-value>
+  </context-param>
+  <listener>
+    <listener-class>
+			org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap</listener-class>
+  </listener>
+  <servlet>
+    <servlet-name>resteasy-servlet</servlet-name>
+    <servlet-class>
+			org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>resteasy-servlet</servlet-name>
+    <url-pattern>/ws/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>initialize</servlet-name>
+    <servlet-class>
+       com.websocket.servlet.MyServlet
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>initialize</servlet-name>
+    <url-pattern>/initialize</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+    <servlet>
+    <servlet-name>loginServlet</servlet-name>
+    <servlet-class>
+       com.websocket.servlet.loginServlet
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>loginServlet</servlet-name>
+    <url-pattern>/loginServlet</url-pattern>
+  </servlet-mapping>
+  
+      <servlet>
+    <servlet-name>leaveGroupServlet</servlet-name>
+    <servlet-class>
+       com.websocket.servlet.LeaveGroupServlet 
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>leaveGroupServlet</servlet-name>
+    <url-pattern>/leaveGroupServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  <context-param>
+    <param-name>javax.faces.PROJECT_STAGE</param-name>
+    <param-value>Development</param-value>
+  </context-param>
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+  
+  
+  <!-- error-code related error pages -->
+<error-page>
+    <error-code>404</error-code>
+    <location>/login.jsp</location>
+</error-page>
+<error-page>
+    <error-code>403</error-code>
+    <location>/login.jsp</location>
+</error-page>
+
+<!-- exception-type related error pages -->
+<error-page>
+    <exception-type>
+          javax.servlet.ServletException
+    </exception-type >
+    <location>/login.jsp</location>
+</error-page>
+
+<error-page>
+    <exception-type>java.io.IOException</exception-type >
+    <location>/login.jsp</location>
+</error-page>
+
+  
+</web-app>

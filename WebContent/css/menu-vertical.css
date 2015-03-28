@@ -1,0 +1,110 @@
+/* CSS Document */
+
+#menu ul { 
+	margin: 0; 
+	padding: 0; 
+	list-style: none;
+	width: 190px; /* Width of Menu Items */ 
+	border-bottom: 1px solid #ccc; 
+} 
+
+#menu ul li { 
+	position: relative; 
+} 
+
+#menu li ul { 
+	position: absolute; 
+	left: 189px; /*Set 1px less than menu width */ 
+	top: 0; 
+	display: block; 
+} 
+
+#menu li:hover ul {
+	display: block; 
+} 
+
+#menu li:hover>ul { 
+	visibility:visible; 
+} 
+
+#menu ul ul {
+	visibility:hidden; 
+} 
+
+/* Fix IE. Hide from IE Mac \*/ 
+* html #menu ul li { float: left; height: 1%; } 
+* html #menu ul li a { height: 1%; } 
+/* End */ 
+
+/* Make-up syles */ 
+
+#menu ul, li { 
+	margin: 0 0 0 0; 
+} 
+
+/* Styles for Menu Items */ 
+#menu ul a { 
+	display: block; 
+	text-decoration: none; 
+	color: #fff; 
+	background-color:#9AA1A7; 
+	
+	  /* IE6 Bug */ 
+	padding: 5px; 
+	border: 1px solid #ccc; 
+	border-bottom: 0; 
+	width: 178px;
+	
+} 
+
+/* Hover Styles */ 
+#menu ul a:hover { 
+	color: #fff; 
+	background-color:#9AA1A7; 
+} 
+
+/* Sub Menu Styles */ 
+#menu li ul a { 
+	text-decoration: none; 
+	color: #fff; 
+	background-color:#9AA1A7;  /* IE6 Bug */ 
+	border: 1px solid #ccc; 
+	border-bottom: 0; 
+	padding: 6px; 	
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-size:12px;
+	margin-bottom:-2px;	
+    font-variant:small-caps;	
+	 
+} 
+
+/* Sub Menu Hover Styles */ 
+#menu li ul a:hover { 
+	color: #fff; 
+	background-color:#9AA1A7; 
+	
+} 
+
+/* Icon Styles */ 
+#menu ul a.submenu {background:#9AA1A7 url(../images/r_arrow.gif) no-repeat right; font-family:Verdana, Arial, Helvetica, sans-serif;
+     font-size:12px;
+	 color:#FFFFFF;
+	 font-variant:small-caps; } 
+#menu ul a.submenu:hover {background:#9AA1A7  url(../images/r_arrow.gif) no-repeat right; font-family:Verdana, Arial, Helvetica, sans-serif;
+     font-size:12px;
+	 color:#FFFFFF;
+	 font-variant:small-caps;  }
+
+
+
+	 /* Icon Styles */ 
+#menu ul a.submenu1 {background:#9AA1A7  no-repeat right; font-family:Verdana, Arial, Helvetica, sans-serif;
+     font-size:12px;
+	 color:#FFFFFF;
+	 font-variant:small-caps; } 
+#menu ul a.submenu1:hover {background:#9AA1A7   no-repeat right; font-family:Verdana, Arial, Helvetica, sans-serif;
+     font-size:12px;
+	 color:#FFFFFF;
+	 font-variant:small-caps;  }
+
+
