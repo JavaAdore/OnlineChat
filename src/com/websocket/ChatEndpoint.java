@@ -76,37 +76,33 @@ public class ChatEndpoint extends Thread {
 
 	public void run() {
 		Map<Member, Group> sessionsToBeRemoved = new HashMap();
-//		while (true) {
-//
-//			sessionsToBeRemoved.clear();
-//			Iterator<Member> members = sessionsMap.keySet().iterator();
-//
-//			while (members.hasNext()) {
-//				Member member = members.next();
-//  
-//				synchronized (members) {
-//					Set<Session> sessions = sessionsMap.get(member);
-//					Iterator<Session> sessionsIterator = sessions.iterator();
-//					while (sessionsIterator.hasNext()) {
-//						Session session = sessionsIterator.next();
-//
-//						if (session.isOpen() == false) {
-//							doClosedSessionBusiness(member, session);
-//							sessionsIterator.remove();
-//
-//						}
-//
-//					}
-//				} 
-//
-//				try {
-//					Thread.sleep(5000);
-//				} catch (InterruptedException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
-//			}
-//		}
+		while (true) {
+
+			sessionsToBeRemoved.clear();
+			Iterator<Member> members = sessionsMap.keySet().iterator();
+
+			while (members.hasNext()) {
+				Member member = members.next();
+  
+				synchronized (members) {
+					Set<Session> sessions = sessionsMap.get(member);
+					Iterator<Session> sessionsIterator = sessions.iterator();
+					while (sessionsIterator.hasNext()) {
+						Session session = sessionsIterator.next();
+
+						sendMessage(session, ChatMessage.refresh);
+
+					}
+				} 
+
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
 
 	}
 

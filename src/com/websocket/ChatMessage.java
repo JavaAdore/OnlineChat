@@ -12,7 +12,7 @@ public class ChatMessage {
 	private Date received;
 	private Member member;
 	private String senderProfilePicture;
-
+	public static ChatMessage refresh= new ChatMessage("55",null, null, null, null,  null);
 	private Long conversationId;
 
 	public ChatMessage(String messageCode, String message, Long sender,
@@ -125,6 +125,12 @@ public class ChatMessage {
 
 	public void setMember(Member member) {
 		this.member = member;
+	}
+
+	
+	public static ChatMessage prepareRefreshMessage() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

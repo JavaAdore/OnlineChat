@@ -122,7 +122,9 @@
 	<script>
 		var webSocket;
 		var UID = 'UID-';
-		serviceLocation = "/OnlineChatHTML/chat";
+		var applicationName = window.location.pathname.substr(0, window.location.pathname.lastIndexOf('/'));
+		applicationName = applicationName.replace('/',''); 
+		serviceLocation = "/"+applicationName+"/chat";
 		var membersList = $("<div/>");
 
 		window.addEventListener("beforeunload", "myFunction", true);
@@ -138,6 +140,8 @@
 			loginMemberID = "${sessionScope.member.getID().longValue()}";
 			groupID = 3;
 			initializeMenu('chat-sidebar-content');
+
+			
 
 		});
 
@@ -414,11 +418,18 @@
 		
 		$(document).ready(
 				function() {
+
+					try
+					{
 					webSocket = new WebSocket("ws://"
 							+ window.location.hostname
 							+ (location.port ? ':' + location.port : '')
 							+ serviceLocation + "/" + loginMemberID + "/"
 							+ groupID);
+					}catch(e)
+					{
+						alert(e);
+					}
 
 				
 					
